@@ -18,7 +18,7 @@ export type UserResponse = BaseUser; // 유저 정보
 
 export async function getMeOrNull(): Promise<MeResponse | null> {
   try {
-    const me = await serverApi.get('/user/me');
+    const me = await serverApi.get('/users/me');
     return me as MeResponse;
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.message : String(e);
